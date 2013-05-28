@@ -1,0 +1,144 @@
+{
+ "apiVersion": "1.0",
+"apis": [
+ {
+ "description": "High level description of the whole API ",
+"operations": [
+ {
+ "errorResponses": [
+ {
+ "code": "500",
+"reason": "Internal Server Error" 
+} 
+],
+"httpMethod": "POST",
+"nickname": "algoio.publish",
+"parameters": [
+ {
+ "allowMultiple": "false",
+"dataType": "string",
+"description": "sync",
+"name": "method",
+"paramType": "query",
+"required": "true",
+"defaultValue": "sync" 
+},
+{
+ "allowMultiple": "false",
+"dataType": "string",
+"description": "json",
+"name": "outputType",
+"paramType": "query",
+"required": "true",
+"defaultValue": "json" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "the package's top directory",
+"name": "package.dir",
+"paramType": "query",
+"required": "true" 
+} 
+],
+"responseClass": "void",
+"summary": "Publish entire R package to Algorithms.io platform" 
+} 
+],
+"path": "/jobs/swagger" 
+},
+{
+ "description": "High level description of the whole API ",
+"operations": [
+ {
+ "errorResponses": [
+ {
+ "code": "500",
+"reason": "Internal Server Error" 
+} 
+],
+"httpMethod": "POST",
+"nickname": "algoio.foobar",
+"parameters": [
+ {
+ "allowMultiple": "false",
+"dataType": "string",
+"description": "sync",
+"name": "method",
+"paramType": "query",
+"required": "true",
+"defaultValue": "sync" 
+},
+{
+ "allowMultiple": "false",
+"dataType": "string",
+"description": "json",
+"name": "outputType",
+"paramType": "query",
+"required": "true",
+"defaultValue": "json" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "string parameter",
+"name": "param1",
+"paramType": "query",
+"required": "true" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "string parameter with null default",
+"name": "param2",
+"paramType": "query",
+"required": "true" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "numeric parameter",
+"name": "param3",
+"paramType": "query",
+"required": "true" 
+} 
+],
+"responseClass": "void",
+"summary": "Sample function used for testing publish" 
+} 
+],
+"path": "/jobs/swagger" 
+} 
+],
+"basePath": "http://v1.api.algorithms.io/",
+"models": null,
+"resourcePath": "/52",
+"swaggerVersion": "1.1",
+"package": {
+ "Package": "algoio",
+"Maintainer": "Anthony Yee <anthony@algorithms.io>",
+"License": "AGPL",
+"Encoding": "UTF-8",
+"Title": "Algorithms IO upload package",
+"Type": "Package",
+"Author": [
+ "Anthony Yee" 
+],
+"Description": [
+ "User can upload R package to the algorithms.io system using\nR-native tool set.  Common server API to accept algorithm uploads from\ndifferent toolbelt" 
+],
+"Version": "0.1",
+"Date": "4/7/2013",
+"URL": "http://algorithms.io",
+"Suggests": "RJSONIO,",
+"Collate": [
+ "'do.R'" 
+],
+"Depends": [
+ [ "RJSONIO", "stringr" ] 
+],
+"Imports": [
+ [ "stringr (>= 0.5)", "RJSONIO", "roxygen2" ] 
+] 
+} 
+}
