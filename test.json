@@ -1,0 +1,112 @@
+{
+ "apiVersion": "1.0",
+"apis": [
+ {
+ "description": "High level description of the whole API ",
+"operations": [
+ {
+ "errorResponses": [
+ {
+ "code": "500",
+"reason": "Internal Server Error" 
+} 
+],
+"httpMethod": "POST",
+"nickname": "openCPUExecute",
+"parameters": [
+ {
+ "allowMultiple": "false",
+"dataType": "string",
+"description": "sync",
+"name": "method",
+"paramType": "query",
+"required": "true",
+"defaultValue": "sync" 
+},
+{
+ "allowMultiple": "false",
+"dataType": "string",
+"description": "json",
+"name": "outputType",
+"paramType": "query",
+"required": "true",
+"defaultValue": "json" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "(type=String) your authorization token linked to your user account",
+"name": "authToken",
+"paramType": "query",
+"required": "true" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "(type=String) one of \"static\" or \"dynamic\". If evalType == static, the next argument package is loaded from disk.\n                If evalType == dynamic, package is treated as raw program text to be evaluated",
+"name": "evalType",
+"paramType": "query",
+"required": "true" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "(type=String) The name of the package your R function is in, you can use yourpackage to test this",
+"name": "package",
+"paramType": "query",
+"required": "true" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "(type=String) The name of the function in the package you want to call, you can use yourfunction1 to test this",
+"name": "fun",
+"paramType": "query",
+"required": "true" 
+},
+{
+ "allowMultiple": "true",
+"dataType": "string",
+"description": "(type=List) list of metadata + data regarding parameters to be passed to function. The only required attribute of parameter\n                  is \"value\" which contains the value to be passed in. Other attributes are \"datatype\" and \"format\". parameters whose datatype\n                  is \"datasource\" will be dereferenced (value will be treated as datasource id and that will be downloaded and the filename\n                  passed to the underlying function",
+"name": "parameters",
+"paramType": "query",
+"required": "true" 
+} 
+],
+"responseClass": "void",
+"summary": "Gets a datafile from the Data Warehouse and executes the R function then removes the datafile" 
+} 
+],
+"path": "/jobs/swagger" 
+} 
+],
+"basePath": "http://v1.api.algorithms.io/",
+"models": null,
+"resourcePath": "/52",
+"swaggerVersion": "1.1",
+"package": {
+ "Package": "algo2r",
+"Maintainer": "Robert I. <robert@algorithms.io>",
+"License": "AGPL",
+"Encoding": "UTF-8",
+"Title": "Algorithms IO Demo Showcase",
+"Type": "Package",
+"Author": [
+ "Robert I." 
+],
+"Description": [
+ "The Algorithms.io Wrapper" 
+],
+"Version": "0.2",
+"Date": "8/19/2012",
+"URL": "http://algorithms.io",
+"Suggests": "lattice,\nggplot2,\nquantmod,\nplyr,\nreshape2,\nlattice,\nggplot2,\nhttpRequest,\nRCurl,\nRJSONIO,\nmgcv",
+"Collate": [
+ "'do.R'" 
+],
+"Depends": [
+ [ "RCurl", "digest", "plotrix", "plyr," ] 
+],
+"Imports": null 
+} 
+}
