@@ -84,8 +84,10 @@ algoio.run <- function(algo.id) {
 #' Upload R data.frame to algorithms.io 
 #' @description Upload data.frame to algorithms.io
 #' @param x @@type=data.frame
+#' @keywords dataframe 
 algoio.upload.dataframe <- function(x) {
   stopifnot(is.data.frame(x))
+  require("RJSONIO")
   
   if (!exists('authToken')) 
     authToken <- getinput("Authentication Token")
@@ -104,6 +106,7 @@ algoio.upload.dataframe <- function(x) {
 }
 
 algoio.delete.dataset <- function(id) {
+  require(stringr)
   if (!exists('authToken')) 
     authToken <- getinput("Authentication Token")
   if (!exists('algoServer'))
