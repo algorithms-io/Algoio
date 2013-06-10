@@ -34,7 +34,7 @@ read.description <- function(file) {
 algoio.publish <- function(package.dir) {
   swagger <- generate_swagger(package.dir)
   # Create an json file prefixed with the package name
-  jsonfile <- paste0(package.dir, 'swagger.json')
+  jsonfile <- paste0(swagger$package$Package, 'swagger.json')
   sink(jsonfile)
   cat(toJSON(swagger))
   sink()
@@ -157,7 +157,8 @@ generate_swagger <- function(package.dir) {
     require("roxygen2")
     require("RJSONIO")
 
-    swagger <- fromJSON('doc/swagger.json')
+    swagger <- fromJSON(getURL('https://s3.amazonaws.com/r-package/algoio.swagger.json'))
+    # swagger <- fromJSON('doc/swagger.json')
     r_files <- dir(file.path(package.dir, "R"), "[.Rr]$", full.names = TRUE)
     parsed <- parse.files(r_files)
     first <- TRUE
@@ -203,7 +204,7 @@ executeAPICall <- function(authToken, algoServer="https://v1.api.algorithms.io/"
     cookiefile = cookie,
     useragent =  "Mozilla/5.0 (Windows; U; Windows NT 5.1; en - US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6",
     header = TRUE,
-    verbose = TRUE,
+    verbose = FALSE,
     netrc = TRUE,
     maxredirs = as.integer(20),
     followlocation = TRUE,
