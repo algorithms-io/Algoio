@@ -213,20 +213,3 @@ executeAPICall <- function(authToken, algoServer="https://v1.api.algorithms.io/"
   );
   return(action(url, curl = curlH, cainfo = CAINFO, ...));
 }
-
-
-#' Sample function used for testing publish
-#' @param param1 string parameter
-#' @param param2 string parameter with null default
-#' @param param3 numeric parameter
-#' @author anonymous@@algorithms.io
-#' @export
-#' @keywords foo
-algoio.foo <- function(param1="default string value", param2=NULL, param3=123) {
-    list()
-}
-
-#' 
-algoio.bar <- function(param1="default string value", param2) {
-  
-}
