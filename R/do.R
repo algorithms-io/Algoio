@@ -84,7 +84,8 @@ algoio.run <- function(algo.id) {
 #' Upload R data.frame to algorithms.io 
 #' @description Upload data.frame to algorithms.io
 #' @param x @@type=data.frame
-#' @keywords dataframe 
+#' @keywords dataframe
+#' @export 
 algoio.upload.dataframe <- function(x) {
   stopifnot(is.data.frame(x))
   require("RJSONIO")
