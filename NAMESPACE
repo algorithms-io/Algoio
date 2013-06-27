@@ -1,1 +1,2 @@
 export(algoio.publish)
+export(algoio.upload.dataframe)
